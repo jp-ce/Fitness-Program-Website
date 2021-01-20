@@ -1,21 +1,15 @@
+const scrollBtn = document.querySelector(".scroll");
 
+window.addEventListener("scroll", () => {
+  const windo = window.pageYOffset;
 
-  window.addEventListener("scroll", () => {
-    var windo = window.pageYOffset;
+  about.offsetTop < windo
+    ? scrollBtn.classList.add("appear")
+    : scrollBtn.classList.remove("appear");
+});
 
-    if (about.offsetTop < windo ) {
-      
-      document.querySelector(".scroll").classList.add("appear");
-     
-    }else{
-      document.querySelector(".scroll").classList.remove("appear");
+//smooth scrolling
 
-    }
-  });
-
-
-   //smooth scrolling
-
-   const scroll = new SmoothScroll('a[href*="#"]',{
-    speed:600
-  });
+const scroll = new SmoothScroll('a[href*="#"]', {
+  speed: 600,
+});
